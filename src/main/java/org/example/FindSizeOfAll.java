@@ -18,7 +18,7 @@ public class FindSizeOfAll {
                     .filter(Files::isRegularFile)
                     .collect(Collectors.toList());
         } catch (RuntimeException e){
-            System.out.println("Path not found");
+            throw new RuntimeException(e);
         }
         for (Path p:result) {
             t = t + Files.size(p);

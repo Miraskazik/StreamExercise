@@ -1,8 +1,0 @@
-
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ë‰öİùÿÿÿÿ8çÔ‚½0
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(ÿä³éûÿÿÿÿ8çÔ‚½0
-U	java:S106"9Replace this use of System.out or System.err by a logger.(àİä8çÔ‚½0
-U	java:S106"9Replace this use of System.out or System.err by a logger.(ÿ¶ü´8çÔ‚½0
-Z	java:S106"9Replace this use of System.out or System.err by a logger.(…˜Ãòùÿÿÿÿ8‘çÔ‚½0
-M
-java:S1128"0Remove this unused import 'java.nio.file.Files'.(‚ƒü8’çÔ‚½0

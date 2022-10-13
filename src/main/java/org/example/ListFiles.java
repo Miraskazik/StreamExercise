@@ -19,7 +19,7 @@ public class ListFiles {
                     .filter(path1 -> path1.getFileName().toString().endsWith(s))
                     .collect(Collectors.toList());
         } catch (IOException e){
-            System.out.println("Path not found" + e);
+            throw new RuntimeException(e);
         }
         return result;
     }

@@ -21,8 +21,8 @@ public class FindSmallestFile {
                     .filter(Files::isRegularFile)
                     .filter(path1 -> path1.getFileName().toString().endsWith(s))
                     .collect(Collectors.toList());
-        } catch (RuntimeException e) {
-            System.out.println("Path not found");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
         for (Path p : result) {
             if (fin > Files.size(p)) {
