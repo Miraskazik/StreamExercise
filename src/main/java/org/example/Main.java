@@ -14,7 +14,7 @@ import static org.example.ListFiles.listFiles;
 public class Main {
     public static void main(String[] args) throws IOException {
 
-        Path path = Paths.get("C:\\Users\\MKAZIK\\IdeaProjects\\StreamExercise");
+        Path path = Paths.get(".");
         String s = ".java";
         List<Path> paths = listFiles(path,s);
         paths.forEach(System.out::println);

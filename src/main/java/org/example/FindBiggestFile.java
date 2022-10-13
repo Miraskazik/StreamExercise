@@ -24,7 +24,7 @@ public class FindBiggestFile {
                     .collect(Collectors.toList());
         }
         catch (RuntimeException e){
-            System.out.println("Path not found" + e);
+            System.out.println("Path not found");
         }
         for (Path p: result) {
             if(fin<Files.size(p)){
