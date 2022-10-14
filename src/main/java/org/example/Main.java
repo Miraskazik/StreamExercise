@@ -1,25 +1,32 @@
 package org.example;
 
+import org.example.pojo.MyJavaFiles;
+
+import java.io.File;
 import java.io.IOException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
+import java.util.Optional;
+import java.util.stream.Stream;
 
-import static org.example.FindBiggestFile.findBiggestFile;
-import static org.example.FindSizeOfAll.findAllSize;
-import static org.example.FindSmallestFile.findSmallestFile;
-import static org.example.ListFiles.listFiles;
+import static org.example.FindBiggestFile.findBiggest;
+import static org.example.FindSmallestFile.findSmallest;
+import static org.example.ListFiles.*;
+
 
 public class Main {
-    public static void main(String[] args) throws IOException {
-
+    public static void main(String[] args)  {
         Path path = Paths.get(".");
-        String s = ".java";
-        List<Path> paths = listFiles(path,s);
-        paths.forEach(System.out::println);
-        System.out.println("xxxxxxxxxx");
-        System.out.println(findSmallestFile(path,s));
-        System.out.println(findBiggestFile(path,s));
-        System.out.println("Size of project is " + findAllSize(path) + "B");    }
+        List<MyJavaFiles> filesList = listFilesNew(path,".java");
+        Optional<MyJavaFiles> smallest = findSmallest(filesList);
+        Optional<MyJavaFiles> biggest = findBiggest(filesList);
+
+        filesList.forEach(System.out::println);
+        if (smallest.isPresent() && biggest.isPresent()){
+            System.out.println("Biggest file is: " + biggest.get().getFileName() + " " + biggest.get().getFileSize() + "B");
+            System.out.println("Smallest file is: " + smallest.get().getFileName() + " " + smallest.get().getFileSize() + "B");
+        }
+        checkAllSize(path).ifPresent(System.out::println);
+    }
 }
