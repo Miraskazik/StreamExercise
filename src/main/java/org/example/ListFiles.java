@@ -9,6 +9,8 @@ import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
 
+import static org.example.CreateObject.createObject;
+
 public class ListFiles {
     public static List<MyJavaFiles> listFilesNew(Path path, String s) {
         List<MyJavaFiles> filesList;
@@ -16,17 +18,7 @@ public class ListFiles {
             filesList = filesStream
                     .filter(Files::isRegularFile)
                     .filter(path1 -> path1.getFileName().toString().endsWith(s))
-                    .map(path2 -> {
-                        try {
-                            return MyJavaFiles.builder()
-                                    .fileName(String.valueOf(path2.getFileName()))
-                                    .fileSize(Files.size(path2))
-                                    .path(path2)
-                                    .build();
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    })
+                    .map(CreateObject::createObject)
                     .toList();
 
         } catch (IOException e) {
@@ -40,16 +32,7 @@ public class ListFiles {
         try (Stream<Path> filesStream = Files.walk(path)) {
             filesList = filesStream
                     .filter(Files::isRegularFile)
-                    .map(path2 -> {
-                        try {
-                            return MyJavaFiles.builder()
-                                    .fileName(String.valueOf(path2.getFileName()))
-                                    .fileSize(Files.size(path2))
-                                    .build();
-                        } catch (IOException e) {
-                            throw new RuntimeException(e);
-                        }
-                    })
+                    .map(CreateObject::createObject)
                     .toList();
 
         } catch (IOException e) {
