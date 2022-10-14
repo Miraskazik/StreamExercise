@@ -5,7 +5,6 @@ import org.example.pojo.MyJavaFiles;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Stream;
@@ -40,6 +39,7 @@ public class ListFiles {
         List<MyJavaFiles> filesList;
         try (Stream<Path> filesStream = Files.walk(path)) {
             filesList = filesStream
+                    .filter(Files::isRegularFile)
                     .map(path2 -> {
                         try {
                             return MyJavaFiles.builder()

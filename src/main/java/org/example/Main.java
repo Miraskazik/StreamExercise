@@ -2,17 +2,15 @@ package org.example;
 
 import org.example.pojo.MyJavaFiles;
 
-import java.io.File;
-import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Stream;
 
 import static org.example.FindBiggestFile.findBiggest;
 import static org.example.FindSmallestFile.findSmallest;
-import static org.example.ListFiles.*;
+import static org.example.ListFiles.checkAllSize;
+import static org.example.ListFiles.listFilesNew;
 
 
 public class Main {
@@ -23,10 +21,14 @@ public class Main {
         Optional<MyJavaFiles> biggest = findBiggest(filesList);
 
         filesList.forEach(System.out::println);
-        if (smallest.isPresent() && biggest.isPresent()){
-            System.out.println("Biggest file is: " + biggest.get().getFileName() + " " + biggest.get().getFileSize() + "B");
-            System.out.println("Smallest file is: " + smallest.get().getFileName() + " " + smallest.get().getFileSize() + "B");
-        }
+        System.out.println("xxxxxxxxxxxxxxxx");
+        System.out.print("Biggest file is: ");
+        findBiggest(filesList).ifPresent(System.out::println);
+        System.out.println("xxxxxxxxxxxxxxxx");
+        System.out.print("Smallest file is: ");
+        findSmallest(filesList).ifPresent(System.out::println);
+        System.out.println("xxxxxxxxxxxxxxxx");
+        System.out.print("Size of all files is: ");
         checkAllSize(path).ifPresent(System.out::println);
     }
 }
