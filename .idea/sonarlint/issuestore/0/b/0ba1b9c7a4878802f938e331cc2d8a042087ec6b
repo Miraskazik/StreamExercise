@@ -1,0 +1,21 @@
+
+n
+java:S1192"QDefine a constant instead of duplicating this literal "xxxxxxxxxxxxxxxx" 3 times.(¬÷þé8´½õ¬½0
+Q
+java:S1854";Remove this useless assignment to local variable "biggest".(øñÂŠ
+R
+java:S1854"<Remove this useless assignment to local variable "smallest".(»‹ÌŠ
+C
+java:S1481"-Remove this unused "smallest" local variable.(»‹ÌŠ
+B
+java:S1481",Remove this unused "biggest" local variable.(øñÂŠ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(­Óººúÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¬÷þé
+N	java:S106"9Replace this use of System.out or System.err by a logger.(íþ–Ý
+S	java:S106"9Replace this use of System.out or System.err by a logger.(±çÿ³þÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(¬÷þé
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ø”ùßøÿÿÿÿ8Ô®ð¬½0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(ËúÉÆ8¾½õ¬½0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(¬÷þé8šÄó¬½0
+U	java:S106"9Replace this use of System.out or System.err by a logger.(Œ‚†8Ãžô¬½0
+U	java:S106 "9Replace this use of System.out or System.err by a logger.(ÖŒüª8¾½õ¬½0
